@@ -117,9 +117,10 @@ public class StudentStatistics {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StudentStatistics studentStats = new StudentStatistics();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); // newline.
         System.out.print("Enter the name of your file with its extension: ");
         String fileName = scanner.nextLine();
         studentStats.readFromFile(fileName);
+        studentStats.calculateTotalMarks();
     }
 }
