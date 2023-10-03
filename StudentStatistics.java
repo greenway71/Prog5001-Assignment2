@@ -30,6 +30,11 @@ class Student {
         this.a3 = a3;
         this.totalMark = a1 + a2 + a3;
     }
+    public double getTotalMark() {
+        return totalMark;
+    
+    }
+    
 }
 
 public class StudentStatistics {
@@ -103,6 +108,7 @@ public class StudentStatistics {
         for (Student student : students) {
             System.out.println("Student Name: " + student.firstName + " " + student.lastName);
             System.out.println("Student ID: " + student.studentID);
+            System.out.println("Total Mark: " + student.getTotalMark());
             System.out.println();
         }
     }
