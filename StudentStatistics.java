@@ -97,6 +97,16 @@ public class StudentStatistics {
             return defaultValue;
         }
     }
+    
+    public void calculateTotalMarks() {
+        System.out.println("Calculating total marks of students.");
+        for (Student student : students) {
+            System.out.println("Student Name: " + student.firstName + " " + student.lastName);
+            System.out.println("Student ID: " + student.studentID);
+            System.out.println();
+        }
+    }
+    
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
