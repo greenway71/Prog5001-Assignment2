@@ -134,5 +134,9 @@ public class StudentStatistics {
         String fileName = scanner.nextLine();
         studentStats.readFromFile(fileName);
         studentStats.calculateTotalMarks();
+        System.out.print("Enter the threshold: ");
+        double threshold = scanner.nextDouble();
+        studentStats.StudentsMarksThreshold(threshold);
+        
     }
 }
