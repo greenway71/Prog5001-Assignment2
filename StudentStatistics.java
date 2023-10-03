@@ -113,6 +113,18 @@ public class StudentStatistics {
         }
     }
     
+    
+    public void StudentsMarksThreshold(double threshold) {
+        System.out.println("Printing students with total marks below the threshold: " + threshold);
+        for (Student student : students) {
+            if (student.getTotalMark() < threshold) {
+                System.out.println("Student Name: " + student.firstName + " " + student.lastName);
+                System.out.println("Student ID: " + student.studentID);
+                System.out.println("Total Mark: " + student.getTotalMark());
+                System.out.println();
+            }
+        }
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
