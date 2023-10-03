@@ -19,6 +19,7 @@ class Student {
     double a1;
     double a2;
     double a3;
+    double totalMark;
 
     public Student(String lastName, String firstName, String studentID, double a1, double a2, double a3) {
         this.lastName = lastName;
@@ -27,6 +28,7 @@ class Student {
         this.a1 = a1;
         this.a2 = a2;
         this.a3 = a3;
+        this.totalMark = a1 + a2 + a3;
     }
 }
 
