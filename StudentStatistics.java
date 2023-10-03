@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class StudentStatistics here.
  *
@@ -11,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 class Student {
     String lastName;
@@ -28,15 +28,80 @@ class Student {
         this.a2 = a2;
         this.a3 = a3;
     }
-
-
 }
 
-public class StudentStatistics
-{
+public class StudentStatistics {
     private List<Student> students;
 
     public StudentStatistics() {
         students = new ArrayList<>();
-}
+    }
+
+    public void readFromFile(String fileName) {
+        try {
+            // Open and read the data from the file.
+            FileReader fileReader = new FileReader(fileName);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            // Read the first two lines of the file.
+            String unitName = bufferedReader.readLine(); // Store the UnitName as String.
+            bufferedReader.readLine(); // Store the headers of student stats in the buffer to read.
+
+            System.out.println("Unit Name: " + unitName.substring(6)); // Print the Unitname from Index position six.
+
+            // Checking and Ignoring Comments that start with "#"
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                // Ignore lines that start with #
+                if (line.trim().startsWith("#")) {
+                    continue;
+                }
+
+                String[] data = line.split(","); // Storing the data into an array and splitting with a comma.
+                if (data.length >= 6) { // Conditional statement to check elements in the array.
+                    String lastName = data[0].trim();
+                    String firstName = data[1].trim();
+                    String studentID = data[2].trim();
+
+                    // Check for whitespace or null values before parsing as double.
+                    double a1 = parseDoubleWithDefault(data[3].trim(), 0.0);
+                    double a2 = parseDoubleWithDefault(data[4].trim(), 0.0);
+                    double a3 = parseDoubleWithDefault(data[5].trim(), 0.0);
+
+                    System.out.println("Student Name: " + firstName + " " + lastName);
+                    System.out.println("Student ID: " + studentID);
+                    System.out.println("A1: " + a1);
+                    System.out.println("A2: " + a2);
+                    System.out.println("A3: " + a3);
+                    System.out.println();
+
+                    // Create a new student and add to the list
+                    Student student = new Student(lastName, firstName, studentID, a1, a2, a3);
+                    students.add(student);
+                }
+            }
+
+            // Close the file
+            bufferedReader.close(); // Close the file.
+        } catch (IOException e) { // Throw this error if any exception.
+            System.out.println("Error reading the file: " + e.getMessage());
+        }
+    }
+
+    private double parseDoubleWithDefault(String str, double defaultValue) {
+        try {
+            return Double.parseDouble(str);
+        } catch (NumberFormatException e) {
+            return defaultValue;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        StudentStatistics studentStats = new StudentStatistics();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter the name of your file with its extension: ");
+        String fileName = scanner.nextLine();
+        studentStats.readFromFile(fileName);
+    }
 }
