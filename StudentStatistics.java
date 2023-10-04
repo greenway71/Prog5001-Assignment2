@@ -205,6 +205,12 @@ public class Main{
                 case 2:
                     studentStats.calculateTotalMarks();
                     break;    
+                
+                case 3:
+                    System.out.print("Enter the threshold: ");
+                    double threshold = scanner.nextDouble();
+                    studentStats.StudentsMarksThreshold(threshold);
+                    break;
                     
                 }
        
