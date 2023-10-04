@@ -1,0 +1,52 @@
+Algorithm 1:
+To list the students with total marks less than a certain threshold.
+1. Create a function StudentMarksThreshold with void return type.
+2. Initialize a vairable "threshold" as double.
+
+Function StudentsMarksThreshold(threshold):
+3. Creating a message to inform the user of the threshold value.
+4. for each student in students:
+        if student.getTotalMark() < threshold:
+        print student name, student id and total mark marks.            
+        
+In the main function of the program.
+5. Prompt the user to provide "threshold" as double and read the value and store it.
+6. Threshold value is passed as argument to the StudentsMarksThreshold method when the class studentStats is called.
+studentStats.StudentsMarksThreshold(threshold)
+7.End
+
+
+
+Algorithm 2:
+To print top5 and bottom 5 student marks.
+1.Create a function named TopAndBottomStudentsMarks().
+TopAndBottomStudentsMarks()
+
+2.Create an empty list called topStudents and bottomStudents
+3.For each student in students:
+       if size of topStudents is less than 5:
+       Then, add entire student object to topStudentslist.
+       else:
+            For i from 0 to size of topStudents - 1:
+                If student.getTotalMark() > topStudents[i].getTotalMark():
+                    Insert the entire student object at index i in topStudents.
+                    Remove student object at index 5 in topStudents.
+                    Break the loop.
+
+4.If size of bottomStudents is less than 5:
+        Then, add entire student object to bottomStudents
+        else:
+            For i from 0 to size of bottomStudents - 1:
+                If student.getTotalMark() < bottomStudents[i].getTotalMark():
+                    Insert the entire student object at index i in bottomStudents.
+                    Remove the student object  at index 5 in bottomStudents.
+                    Break the loop.
+
+4. Create printStudents function to print the Student Name,id and total mark.
+5. Call printstudents function with topStudents and bottomstudents as value and display the result.
+In the main Program:
+6. Call the TopAndBottomStudentsMarks function.
+studentStats.TopAndBottomStudentsMarks();
+7.End
+
+
