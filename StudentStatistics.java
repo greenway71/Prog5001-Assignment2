@@ -215,6 +215,11 @@ public class Main{
                 case 4:
                     studentStats.TopAndBottomStudentsMarks();
                     break;
+                case 5:
+                    System.out.println("Exiting the program.");
+                    System.exit(0);
+                
+                
                 }
        
        
