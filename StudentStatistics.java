@@ -194,11 +194,25 @@ public class Main{
        System.out.print("Enter your choice: ");
        
        int choice = scanner.nextInt();
+       switch (choice) {
+                case 1:
+                    scanner.nextLine(); 
+                    System.out.print("Enter the name of your file with its extension: ");
+                    String fileName = scanner.nextLine();
+                    studentStats.readFromFile(fileName);
+                    break;
+                }
        
-        }
+       
+        System.out.print("Enter the name of your file with its extension: ");
+        String fileName = scanner.nextLine();
+        studentStats.readFromFile(fileName);
+        studentStats.calculateTotalMarks();
+        System.out.print("Enter the threshold: ");
+        double threshold = scanner.nextDouble();
+        studentStats.StudentsMarksThreshold(threshold);
+        studentStats.TopAndBottomStudentsMarks();
     }
 }
 }
-
-
-
+}
