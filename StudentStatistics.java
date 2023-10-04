@@ -222,16 +222,6 @@ public class Main{
                 default:
                     System.out.println("Invalid choice. Please select a valid option.");
                 }
-       
-       
-        System.out.print("Enter the name of your file with its extension: ");
-        String fileName = scanner.nextLine();
-        studentStats.readFromFile(fileName);
-        studentStats.calculateTotalMarks();
-        System.out.print("Enter the threshold: ");
-        double threshold = scanner.nextDouble();
-        studentStats.StudentsMarksThreshold(threshold);
-        studentStats.TopAndBottomStudentsMarks();
     }
 }
 }
