@@ -212,6 +212,9 @@ public class Main{
                     studentStats.StudentsMarksThreshold(threshold);
                     break;
                     
+                case 4:
+                    studentStats.TopAndBottomStudentsMarks();
+                    break;
                 }
        
        
