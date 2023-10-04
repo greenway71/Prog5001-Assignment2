@@ -180,9 +180,16 @@ private void printStudents(List<Student> studentsList) {
     
 public class Main{
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        StudentStatistics studentStats = new StudentStatistics();
-        scanner.nextLine(); // newline.
+       Scanner scanner = new Scanner(System.in);
+       StudentStatistics studentStats = new StudentStatistics();
+        
+       System.out.println("Menu:");
+       System.out.println("1. F1: Read from file");
+       System.out.println("2. F2: Calculate total marks");
+       System.out.println("3. F3: Print students below threshold");
+       System.out.println("4. F4: Print top and bottom students");
+       System.out.println("5. Exit");
+       System.out.print("Enter your choice: ");
         System.out.print("Enter the name of your file with its extension: ");
         String fileName = scanner.nextLine();
         studentStats.readFromFile(fileName);
