@@ -201,6 +201,11 @@ public class Main{
                     String fileName = scanner.nextLine();
                     studentStats.readFromFile(fileName);
                     break;
+                    
+                case 2:
+                    studentStats.calculateTotalMarks();
+                    break;    
+                    
                 }
        
        
