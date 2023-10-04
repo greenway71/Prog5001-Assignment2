@@ -159,7 +159,16 @@ public class StudentStatistics {
             }
         }
     }
+    
         
+}
+private void printStudents(List<Student> studentsList) {
+    for (Student student : studentsList) {
+        System.out.println("Student Name: " + student.firstName + " " + student.lastName);
+        System.out.println("Student ID: " + student.studentID);
+        System.out.println("Total Mark: " + student.getTotalMark());
+        System.out.println();
+    }
 }
 
 
