@@ -193,16 +193,12 @@ public class Main{
        System.out.println("5. Exit");
        System.out.print("Enter your choice: ");
        
+       int choice = scanner.nextInt();
        
-        System.out.print("Enter the name of your file with its extension: ");
-        String fileName = scanner.nextLine();
-        studentStats.readFromFile(fileName);
-        studentStats.calculateTotalMarks();
-        System.out.print("Enter the threshold: ");
-        double threshold = scanner.nextDouble();
-        studentStats.StudentsMarksThreshold(threshold);
-        studentStats.TopAndBottomStudentsMarks();
+        }
     }
 }
 }
-}
+
+
+
