@@ -2,7 +2,7 @@
  * Write a description of class StudentStatistics here.
  *
  * @author (Sandesh Adhikari)
- * @version (0.5)
+ * @version (1.0)
  */
 
 import java.util.Scanner;
