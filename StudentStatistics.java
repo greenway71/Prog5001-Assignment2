@@ -124,7 +124,18 @@ public class StudentStatistics {
                 System.out.println();
             }
         }
+    
+   
+        
     }
+    
+    public void TopAndBottomStudentsMarks() {
+    List<Student> topStudents = new ArrayList<>();
+    List<Student> bottomStudents = new ArrayList<>();
+}
+    
+    
+    
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
