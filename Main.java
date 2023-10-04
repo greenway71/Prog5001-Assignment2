@@ -30,14 +30,14 @@ class Student {
         this.a3 = a3;
         this.totalMark = a1 + a2 + a3;
     }
+    
     public double getTotalMark() {
         return totalMark;
-    
     }
     
 }
 
-public class StudentStatistics {
+class StudentStatistics {
     private List<Student> students;
 
     public StudentStatistics() {
@@ -88,20 +88,13 @@ public class StudentStatistics {
                 }
             }
 
-            // Close the file
+            
             bufferedReader.close(); // Close the file.
         } catch (IOException e) { // Throw this error if any exception.
             System.out.println("Error reading the file: " + e.getMessage());
         }
     }
 
-    private double parseDoubleWithDefault(String str, double defaultValue) {
-        try {
-            return Double.parseDouble(str);
-        } catch (NumberFormatException e) {
-            return defaultValue;
-        }
-    }
     
     public void calculateTotalMarks() {
         System.out.println("Calculating total marks of students.");
@@ -124,9 +117,6 @@ public class StudentStatistics {
                 System.out.println();
             }
         }
-    
-   
-        
     }
     
     public void TopAndBottomStudentsMarks() {
@@ -147,7 +137,7 @@ public class StudentStatistics {
         }
     
     
-    if (bottomStudents.size() < 5) {
+        if (bottomStudents.size() < 5) {
             bottomStudents.add(student);
         } else {
             for (int i = 0; i < bottomStudents.size(); i++) {
@@ -166,6 +156,7 @@ public class StudentStatistics {
     printStudents(bottomStudents);
         
 }
+
 private void printStudents(List<Student> studentsList) {
     for (Student student : studentsList) {
         System.out.println("Student Name: " + student.firstName + " " + student.lastName);
@@ -175,54 +166,56 @@ private void printStudents(List<Student> studentsList) {
     }
 }
 
+    private double parseDoubleWithDefault(String str, double defaultValue) {
+        try {
+            return Double.parseDouble(str);
+        } catch (NumberFormatException e) {
+            return defaultValue;
+        }
+    }
+}
 
     
     
 public class Main{
     public static void main(String[] args) {
-       Scanner scanner = new Scanner(System.in);
-       StudentStatistics studentStats = new StudentStatistics();
-       
-    while (true) {
-        
-       System.out.println("Menu:");
-       System.out.println("1. F1: Read from file");
-       System.out.println("2. F2: Calculate total marks");
-       System.out.println("3. F3: Print students below threshold");
-       System.out.println("4. F4: Print top and bottom students");
-       System.out.println("5. Exit");
-       System.out.print("Enter your choice: ");
-       
-       int choice = scanner.nextInt();
-       switch (choice) {
+        Scanner scanner = new Scanner(System.in);
+        StudentStatistics studentStats = new StudentStatistics();
+
+        while (true) {
+            System.out.println("Menu:");
+            System.out.println("1. F1: Read from file");
+            System.out.println("2. F2: Calculate total marks");
+            System.out.println("3. F3: Print students below threshold");
+            System.out.println("4. F4: Print top and bottom students");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
                 case 1:
                     scanner.nextLine(); 
                     System.out.print("Enter the name of your file with its extension: ");
                     String fileName = scanner.nextLine();
                     studentStats.readFromFile(fileName);
                     break;
-                    
                 case 2:
                     studentStats.calculateTotalMarks();
-                    break;    
-                
+                    break;
                 case 3:
                     System.out.print("Enter the threshold: ");
                     double threshold = scanner.nextDouble();
                     studentStats.StudentsMarksThreshold(threshold);
                     break;
-                    
                 case 4:
                     studentStats.TopAndBottomStudentsMarks();
                     break;
                 case 5:
                     System.out.println("Exiting the program.");
                     System.exit(0);
-                
                 default:
                     System.out.println("Invalid choice. Please select a valid option.");
-                }
+            }
+        }
     }
-}
-}
 }
