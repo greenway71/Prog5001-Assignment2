@@ -182,6 +182,8 @@ public class Main{
     public static void main(String[] args) {
        Scanner scanner = new Scanner(System.in);
        StudentStatistics studentStats = new StudentStatistics();
+       
+    while (true) {
         
        System.out.println("Menu:");
        System.out.println("1. F1: Read from file");
@@ -190,6 +192,8 @@ public class Main{
        System.out.println("4. F4: Print top and bottom students");
        System.out.println("5. Exit");
        System.out.print("Enter your choice: ");
+       
+       
         System.out.print("Enter the name of your file with its extension: ");
         String fileName = scanner.nextLine();
         studentStats.readFromFile(fileName);
@@ -199,5 +203,6 @@ public class Main{
         studentStats.StudentsMarksThreshold(threshold);
         studentStats.TopAndBottomStudentsMarks();
     }
+}
 }
 }
