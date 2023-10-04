@@ -132,8 +132,22 @@ public class StudentStatistics {
     public void TopAndBottomStudentsMarks() {
     List<Student> topStudents = new ArrayList<>();
     List<Student> bottomStudents = new ArrayList<>();
-}
     
+    for (Student student : students) {
+        if (topStudents.size() < 5) {
+            topStudents.add(student);
+        } else {
+            for (int i = 0; i < topStudents.size(); i++) {
+                if (student.getTotalMark() > topStudents.get(i).getTotalMark()) {
+                    topStudents.add(i, student);
+                    topStudents.remove(5); 
+                    break;
+                }
+            }
+        }
+    }
+
+}
     
     
 
