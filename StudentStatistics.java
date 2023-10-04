@@ -145,9 +145,24 @@ public class StudentStatistics {
                 }
             }
         }
+    
+    
+    if (bottomStudents.size() < 5) {
+            bottomStudents.add(student);
+        } else {
+            for (int i = 0; i < bottomStudents.size(); i++) {
+                if (student.getTotalMark() < bottomStudents.get(i).getTotalMark()) {
+                    bottomStudents.add(i, student);
+                    bottomStudents.remove(5); 
+                    break;
+                }
+            }
+        }
     }
-
+        
 }
+
+
     
     
 
@@ -162,6 +177,6 @@ public class StudentStatistics {
         System.out.print("Enter the threshold: ");
         double threshold = scanner.nextDouble();
         studentStats.StudentsMarksThreshold(threshold);
-        
+        studentStats.TopAndBottomStudentsMarks();
     }
 }
