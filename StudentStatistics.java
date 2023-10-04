@@ -159,7 +159,11 @@ public class StudentStatistics {
             }
         }
     }
-    
+    System.out.println("Printing top 5 students with the highest total marks:");
+    printStudents(topStudents);
+
+    System.out.println("Printing bottom 5 students with the lowest total marks:");
+    printStudents(bottomStudents);
         
 }
 private void printStudents(List<Student> studentsList) {
