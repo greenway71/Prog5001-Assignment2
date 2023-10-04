@@ -178,7 +178,7 @@ private void printStudents(List<Student> studentsList) {
 
     
     
-
+public class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StudentStatistics studentStats = new StudentStatistics();
@@ -192,4 +192,5 @@ private void printStudents(List<Student> studentsList) {
         studentStats.StudentsMarksThreshold(threshold);
         studentStats.TopAndBottomStudentsMarks();
     }
+}
 }
